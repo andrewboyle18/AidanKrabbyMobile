@@ -1,7 +1,7 @@
 import pkg.*;
 public class starter implements InputControl, InputKeyControl 
 {
-	
+	public static KrabbyMobile kMob;
         public static void main(String args[])
         {
 			// following line is necessary for onMouseClick, don't change
@@ -10,9 +10,12 @@ public class starter implements InputControl, InputKeyControl
 			// please leave following line alone, necessary for keyboard input
 			KeyController kC = new KeyController(Canvas.getInstance(),new starter());
 		
-			KrabbyMobile kMob = new KrabbyMobile(0,0);
+			kMob = new KrabbyMobile(0,0,400,250);
 			kMob.fill();
 			kMob.translate(90,90);
+			Ellipse tester = new Ellipse(200,100,30,30);
+			tester.fill();
+			System.out.println(kMob.contains(tester));
 			
 		}
 		
@@ -24,6 +27,13 @@ public class starter implements InputControl, InputKeyControl
 		
 		public void keyPress(String s)
 			{
-				
+				if (s.equals("w"))
+					kMob.translate(0,-10);
+				if (s.equals("s"))
+					kMob.translate(0,10);
+				if (s.equals("a"))
+					kMob.translate(-10,0);
+				if (s.equals("d"))
+					kMob.translate(10,0);
 			}
 }

@@ -1,4 +1,6 @@
 import pkg.*;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 public class KrabbyMobile
 {
 	private Rectangle lettuce;
@@ -47,15 +49,15 @@ public class KrabbyMobile
 	private double h;
 	private Rectangle bound;
 	
-	public KrabbyMobile(double x, double y){
+	public KrabbyMobile(double x, double y, double width, double height){
 		  //x starts at 100 goes off of the bun
 		  //y starts at 100
 		  
 		  xx = x;
 		  yy = y;
 		  
-		  w = 400;
-		  h = 250;
+		  w = width;
+		  h = height;
 		  
 		  bound = new Rectangle(xx,yy,w,h+40);
 		  bound.draw();
@@ -136,11 +138,8 @@ public class KrabbyMobile
 	}
 
 	public void fill(){
-		
-		
 		bun.fill();
 		bun.setColor(Color.ORANGE);
-		
 		seed1.fill();
 		seed1.setColor(SEED);
 		seed1L.draw();
@@ -165,25 +164,19 @@ public class KrabbyMobile
 		seed8.fill();
 		seed8.setColor(SEED);
 		seed8L.draw();
-		
 		lettuce.fill();
 		lettuce.setColor(Color.GREEN);
-		
 		tomato.fill();
 		tomato.setColor(Color.RED);
-		
 		onion.fill();
 		onion.setColor(PURPLE);
 		onionlayer.draw();
 		oL2.setColor(PURPLE);
-		
 		cheese.fill();
 		cheese.setColor(Color.YELLOW);
 		cL.draw();
-		
 		patty.fill();
 		patty.setColor(BROWN);
-		
 		w1.fill();
 		w1.setColor(Color.GREEN);
 		w1L.draw();
@@ -192,12 +185,42 @@ public class KrabbyMobile
 		w2L.draw();
 	}
 	
-	public void grow(double ww, double hh){
-		//grows by a factor of ww and hh
-		w = w*ww;
-		h = h*hh;
+	public void draw(){
+		bun.draw();
+		patty.draw();
+		seed1L.draw();
+		seed2L.draw();
+		seed3L.draw();
+		seed4L.draw();
+		seed5L.draw();
+		seed6L.draw();
+		seed7L.draw();
+		seed8L.draw();
+		onionlayer.draw();
+		oL2.setColor(PURPLE);
+		cL.draw();
+		w1L.draw();
+		w2L.draw();
 	}
 		
-		
+	public boolean contains(Rectangle o){
+		if ((o.getX()-w < bound.getX()+400 && o.getX()>bound.getX()) 
+					&& o.getY()-h < bound.getY()+400 && o.getY()>bound.getY()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	public boolean contains(Ellipse o){
+		if ((o.getX()-w < bound.getX()+400 && o.getX()>bound.getX()) 
+					&& o.getY()-h < bound.getY()+400 && o.getY()>bound.getY()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 		
 }
