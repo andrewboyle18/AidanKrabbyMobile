@@ -3,6 +3,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 public class KrabbyMobile
 {
+	private Picture spongeBob;
 	private Rectangle lettuce;
 	private Ellipse tomato;
 	private Ellipse onion;
@@ -62,6 +63,12 @@ public class KrabbyMobile
 		  bound = new Rectangle(xx,yy,w,h+40);
 		  bound.draw();
 		  
+		  spongeBob = new Picture("download.jpg");
+		  
+		  spongeBob.translate(xx,yy-(spongeBob.getHeight()/2));
+		  spongeBob.draw();
+		  
+		  
 		  lettuce = new Rectangle(xx-25,yy+75,w+50,h-235);
 		
 		  tomato = new Ellipse(xx-25,yy+90,w+50,h-225);
@@ -105,6 +112,7 @@ public class KrabbyMobile
 	}
 	
 	public void translate(double xxx, double yyy){
+		  spongeBob.translate(xxx,yyy);
 		  bound.translate(xxx,yyy);
 		  lettuce.translate(xxx,yyy);
 		  tomato.translate(xxx,yyy);
@@ -138,6 +146,7 @@ public class KrabbyMobile
 	}
 
 	public void fill(){
+		spongeBob.draw();
 		bun.fill();
 		bun.setColor(Color.ORANGE);
 		seed1.fill();
@@ -186,6 +195,7 @@ public class KrabbyMobile
 	}
 	
 	public void draw(){
+		spongeBob.draw();
 		bun.draw();
 		patty.draw();
 		seed1L.draw();

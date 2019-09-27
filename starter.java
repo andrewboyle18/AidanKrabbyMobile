@@ -13,9 +13,9 @@ public class starter implements InputControl, InputKeyControl
 			kMob = new KrabbyMobile(0,0,400,250);
 			kMob.fill();
 			kMob.translate(90,90);
-			Ellipse tester = new Ellipse(200,100,30,30);
-			tester.fill();
-			System.out.println(kMob.contains(tester));
+			// Ellipse tester = new Ellipse(200,100,30,30);
+			// tester.fill();
+			// System.out.println(kMob.contains(tester));
 			
 		}
 		
