@@ -50,61 +50,61 @@ public class KrabbyMobile
 	private double h;
 	private Rectangle bound;
 	
-	public KrabbyMobile(double x, double y, double width, double height){
+	public KrabbyMobile(double x, double y, double f){
 		  //x starts at 100 goes off of the bun
 		  //y starts at 100
 		  
 		  xx = x;
 		  yy = y;
 		  
-		  w = width;
-		  h = height;
+		  w = 400;
+		  h = 250;
 		  
 		  bound = new Rectangle(xx,yy,w,h+40);
 		  bound.draw();
 		  
-		  spongeBob = new Picture("download.jpg");
-		  
+		  spongeBob = new Picture("pkg//download.jpg");
+		  // spongeBob = new Picture(spongeBob.getWidth()*f, spongeBob.getHeight()*f);
 		  spongeBob.translate(xx,yy-(spongeBob.getHeight()/2));
 		  spongeBob.draw();
 		  
 		  
-		  lettuce = new Rectangle(xx-25,yy+75,w+50,h-235);
+		  lettuce = new Rectangle((xx-25)*f,(yy+75)*f,(w+50)*f,(h-235)*f);
 		
-		  tomato = new Ellipse(xx-25,yy+90,w+50,h-225);
+		  tomato = new Ellipse((xx-25)*f,(yy+90)*f,(w+50)*f,(h-225)*f);
 		
-		  onion = new Ellipse(xx-25,yy+115,w+50,h-225);
-		  onionlayer = new Ellipse(xx-25,yy+115,w+50,h-225);
-		  oL2 = new Ellipse(xx-50,yy+115,w+30,h-225);
+		  onion = new Ellipse((xx-25)*f,(yy+115)*f,(w+50)*f,(h-225)*f);
+		  onionlayer = new Ellipse((xx-25)*f,(yy+115)*f,(w+50)*f,(h-225)*f);
+		  oL2 = new Ellipse((xx-50)*f,(yy+115)*f,(w+30)*f,(h-225)*f);
 		
-		  cheese = new Rectangle(xx-25,yy+140,w+50,h-240);
-		  cL = new Rectangle(xx-25,yy+140,w+50,h-225);
+		  cheese = new Rectangle((xx-25)*f,(yy+140)*f,(w+50)*f,(h-240)*f);
+		  cL = new Rectangle((xx-25)*f,(yy+140)*f,(w+50)*f,(h-225)*f);
 		
-		  patty = new Ellipse(xx-25,yy+150,w+50,h-200);
+		  patty = new Ellipse((xx-25)*f,(yy+150)*f,(w+50)*f,(h-200)*f);
 		
-		  bun = new Ellipse(xx,yy,w,h);
+		  bun = new Ellipse(xx,yy,w*f,h*f);
 		
-		  seed1 = new Ellipse(xx+95,yy+25,w-390,h-243);
-		  seed1L = new Ellipse(xx+95,yy+25,w-390,h-243);
-		  seed2 = new Ellipse(xx+125,yy+35,w-390,h-243);
-		  seed2L = new Ellipse(xx+125,yy+35,w-390,h-243);
-		  seed3 = new Ellipse(xx+155,yy+25,w-390,h-243);
-		  seed3L = new Ellipse(xx+155,yy+25,w-390,h-243);
-		  seed4 = new Ellipse(xx+185,yy+35,w-390,h-243);
-		  seed4L = new Ellipse(xx+185,yy+35,w-390,h-243);
-		  seed5 = new Ellipse(xx+205,yy+25,w-390,h-243);
-		  seed5L = new Ellipse(xx+205,yy+25,w-390,h-243);
-		  seed6 = new Ellipse(xx+235,yy+35,w-390,h-243);
-		  seed6L = new Ellipse(xx+235,yy+35,w-390,h-243);
-		  seed7 = new Ellipse(xx+265,yy+25,w-390,h-243);
-		  seed7L = new Ellipse(xx+265,yy+25,w-390,h-243);
-		  seed8 = new Ellipse(xx+295,yy+35,w-390,h-243);
-		  seed8L = new Ellipse(xx+295,yy+35,w-390,h-243);
+		  seed1 = new Ellipse((xx+95)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed1L = new Ellipse((xx+95)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed2 = new Ellipse((xx+125)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed2L = new Ellipse((xx+125)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed3 = new Ellipse((xx+155)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed3L = new Ellipse((xx+155)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed4 = new Ellipse((xx+185)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed4L = new Ellipse((xx+185)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed5 = new Ellipse((xx+205)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed5L = new Ellipse((xx+205)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed6 = new Ellipse((xx+235)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed6L = new Ellipse((xx+235)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed7 = new Ellipse((xx+265)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed7L = new Ellipse((xx+265)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
+		  seed8 = new Ellipse((xx+295)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
+		  seed8L = new Ellipse((xx+295)*f,(yy+35)*f,(w-390)*f,(h-243)*f);
 		
-		  w1 = new Ellipse(xx+230,yy+240,w-350,h-200);
-		  w1L= new Ellipse(xx+230,yy+240,w-350,h-200);
-		  w2 = new Ellipse(xx+120,yy+240,w-350,h-200);
-		  w2L = new Ellipse(xx+120,yy+240,w-350,h-200);
+		  w1 = new Ellipse((xx+230)*f,(yy+240)*f,(w-350)*f,(h-200)*f);
+		  w1L= new Ellipse((xx+230)*f,(yy+240)*f,(w-350)*f,(h-200)*f);
+		  w2 = new Ellipse((xx+120)*f,(yy+240)*f,(w-350)*f,(h-200)*f);
+		  w2L = new Ellipse((xx+120)*f,(yy+240)*f,(w-350)*f,(h-200)*f);
 		 
 		 BROWN = new Color(117, 64, 18);
 		 SEED = new Color(255, 246, 161);
