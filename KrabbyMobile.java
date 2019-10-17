@@ -1,9 +1,10 @@
 import pkg.*;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
-public class KrabbyMobile
+public class KrabbyMobile extends Car
 {
 	private Picture spongeBob;
+	private Picture patrick;
 	private Rectangle lettuce;
 	private Ellipse tomato;
 	private Ellipse onion;
@@ -61,12 +62,9 @@ public class KrabbyMobile
 		  h = 250;
 		  
 		  bound = new Rectangle(xx,yy,w,h+40);
-		  bound.draw();
+		  // bound.draw();
 		  
-		  spongeBob = new Picture("pkg//download.jpg");
-		  // spongeBob = new Picture(spongeBob.getWidth()*f, spongeBob.getHeight()*f);
-		  spongeBob.translate(xx,yy-(spongeBob.getHeight()/2));
-		  spongeBob.draw();
+		  
 		  
 		  
 		  lettuce = new Rectangle((xx-25)*f,(yy+75)*f,(w+50)*f,(h-235)*f);
@@ -78,7 +76,7 @@ public class KrabbyMobile
 		  oL2 = new Ellipse((xx-50)*f,(yy+115)*f,(w+30)*f,(h-225)*f);
 		
 		  cheese = new Rectangle((xx-25)*f,(yy+140)*f,(w+50)*f,(h-240)*f);
-		  cL = new Rectangle((xx-25)*f,(yy+140)*f,(w+50)*f,(h-225)*f);
+		  cL = new Rectangle((xx-25)*f,(yy+140)*f,(w+50)*f,(h-2240)*f);
 		
 		  patty = new Ellipse((xx-25)*f,(yy+150)*f,(w+50)*f,(h-200)*f);
 		
@@ -111,8 +109,24 @@ public class KrabbyMobile
 		 PURPLE = new Color(222, 168, 247);
 	}
 	
+	public double getX(){
+		return bound.getX();
+	}
+	
+	public double getY(){
+		return bound.getY();
+	}
+	
+	public double getWidth(){
+		return bound.getWidth();
+	}
+	
+	public double getHeight(){
+		return bound.getHeight();
+	}
+		
+	
 	public void translate(double xxx, double yyy){
-		  spongeBob.translate(xxx,yyy);
 		  bound.translate(xxx,yyy);
 		  lettuce.translate(xxx,yyy);
 		  tomato.translate(xxx,yyy);
@@ -146,7 +160,6 @@ public class KrabbyMobile
 	}
 
 	public void fill(){
-		spongeBob.draw();
 		bun.fill();
 		bun.setColor(Color.ORANGE);
 		seed1.fill();
@@ -195,7 +208,6 @@ public class KrabbyMobile
 	}
 	
 	public void draw(){
-		spongeBob.draw();
 		bun.draw();
 		patty.draw();
 		seed1L.draw();
@@ -211,6 +223,10 @@ public class KrabbyMobile
 		cL.draw();
 		w1L.draw();
 		w2L.draw();
+	}
+	
+	public Rectangle getBoundBox(){
+		return bound;
 	}
 		
 	public boolean contains(Rectangle o){

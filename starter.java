@@ -1,7 +1,7 @@
 import pkg.*;
 public class starter implements InputControl, InputKeyControl 
 {
-	public static KrabbyMobile kMob;
+	public static Car kMob;
 	
         public static void main(String args[])
         {
@@ -11,8 +11,17 @@ public class starter implements InputControl, InputKeyControl
 			// please leave following line alone, necessary for keyboard input
 			KeyController kC = new KeyController(Canvas.getInstance(),new starter());
 			
-			kMob = new KrabbyMobile(0,0,1);
+			kMob = new KrabbyMobile(100,100,1);
 			kMob.fill();
+			Emoji face = new Emoji();
+			face.fill();
+			
+			if(face.crash(kMob)){
+				System.out.println("hit");
+			}
+			else{
+				System.out.println("poop");
+			}
 		}
 		
 		public void onMouseClick(double x, double y)
