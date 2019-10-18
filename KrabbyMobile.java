@@ -61,8 +61,8 @@ public class KrabbyMobile extends Car
 		  w = 400;
 		  h = 250;
 		  
-		  bound = new Rectangle(xx,yy,w,h+40);
-		  // bound.draw();
+		  bound = new Rectangle(xx*f,yy*f,w*f,(h+40)*f);
+		  bound.draw();
 		  
 		  
 		  
@@ -80,7 +80,7 @@ public class KrabbyMobile extends Car
 		
 		  patty = new Ellipse((xx-25)*f,(yy+150)*f,(w+50)*f,(h-200)*f);
 		
-		  bun = new Ellipse(xx,yy,w*f,h*f);
+		  bun = new Ellipse(xx*f,yy*f,w*f,h*f);
 		
 		  seed1 = new Ellipse((xx+95)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
 		  seed1L = new Ellipse((xx+95)*f,(yy+25)*f,(w-390)*f,(h-243)*f);
